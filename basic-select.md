@@ -200,3 +200,92 @@ where LAT_N is the northern latitude and LONG_W is the western longitude.
 ```sql
 SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION;       
 ```
+
+###**[Weather Observation Station 4](https://www.hackerrank.com/challenges/weather-observation-station-4)**
+
+Let NUM be the number of CITY entries in STATION, and NUMunique be the number of unique cities. Query the value of NUM−NUMunique from STATION.
+
+In other words, query the number of non-unique CITY names in STATION by subtracting the number of unique CITY entries in the table from the total number of CITY entries in the table.
+
+Input Format
+
+The STATION table is described as follows:
+
+|  Field | Type |
+|---|---|
+| ID  | NUMBER |
+| CITY | VARCHAR2(21)   |
+| STATE  | VARCHAR2(2)  |
+| LAT_N |  NUMBER |
+| LONG_W | NUMBER |
+
+where LAT_N is the northern latitude and LONG_W is the western longitude.
+
+**Solution**
+```sql
+SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION;       
+```
+
+###**[Weather Observation Station 4](https://www.hackerrank.com/challenges/weather-observation-station-4)**
+
+Let NUM be the number of CITY entries in STATION, and NUMunique be the number of unique cities. Query the value of NUM−NUMunique from STATION.
+
+In other words, query the number of non-unique CITY names in STATION by subtracting the number of unique CITY entries in the table from the total number of CITY entries in the table.
+
+Input Format
+
+The STATION table is described as follows:
+
+|  Field | Type |
+|---|---|
+| ID  | NUMBER |
+| CITY | VARCHAR2(21)   |
+| STATE  | VARCHAR2(2)  |
+| LAT_N |  NUMBER |
+| LONG_W | NUMBER |
+
+where LAT_N is the northern latitude and LONG_W is the western longitude.
+
+**Solution**
+```sql
+SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION;       
+```
+
+
+###**[Weather Observation Station 5](https://www.hackerrank.com/challenges/weather-observation-station-5)**
+
+Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.
+
+Input Format
+
+The STATION table is described as follows:
+
+|  Field | Type |
+|---|---|
+| ID  | NUMBER |
+| CITY | VARCHAR2(21)   |
+| STATE  | VARCHAR2(2)  |
+| LAT_N |  NUMBER |
+| LONG_W | NUMBER |
+
+where LAT_N is the northern latitude and LONG_W is the western longitude.
+
+*Sample Input*
+
+Let's say that CITY only has four entries: DEF, ABC, PQRS and WXY
+
+*Sample Output*
+
+ABC 3 
+
+PQRS 4
+
+*Explanation*
+
+When ordered alphabetically, the CITY names are listed as ABC, DEF, PQRS, and WXY, with the respective lengths 3,3,4,3,3,4, and 33. The longest-named city is obviously PQRS, but there are 33 options for shortest-named city; we choose ABC, because it comes first alphabetically.
+
+**Solution**
+```sql
+select city, length(city) from station order by length(city) DESC,city ASC fetch first row only;
+select city, length(city) from station order by length(city) asc ,city asc fetch first row only;      
+```
