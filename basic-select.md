@@ -201,57 +201,6 @@ where LAT_N is the northern latitude and LONG_W is the western longitude.
 SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION;       
 ```
 
-###**[Weather Observation Station 4](https://www.hackerrank.com/challenges/weather-observation-station-4)**
-
-Let NUM be the number of CITY entries in STATION, and NUMunique be the number of unique cities. Query the value of NUM−NUMunique from STATION.
-
-In other words, query the number of non-unique CITY names in STATION by subtracting the number of unique CITY entries in the table from the total number of CITY entries in the table.
-
-Input Format
-
-The STATION table is described as follows:
-
-|  Field | Type |
-|---|---|
-| ID  | NUMBER |
-| CITY | VARCHAR2(21)   |
-| STATE  | VARCHAR2(2)  |
-| LAT_N |  NUMBER |
-| LONG_W | NUMBER |
-
-where LAT_N is the northern latitude and LONG_W is the western longitude.
-
-**Solution**
-```sql
-SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION;       
-```
-
-###**[Weather Observation Station 4](https://www.hackerrank.com/challenges/weather-observation-station-4)**
-
-Let NUM be the number of CITY entries in STATION, and NUMunique be the number of unique cities. Query the value of NUM−NUMunique from STATION.
-
-In other words, query the number of non-unique CITY names in STATION by subtracting the number of unique CITY entries in the table from the total number of CITY entries in the table.
-
-Input Format
-
-The STATION table is described as follows:
-
-|  Field | Type |
-|---|---|
-| ID  | NUMBER |
-| CITY | VARCHAR2(21)   |
-| STATE  | VARCHAR2(2)  |
-| LAT_N |  NUMBER |
-| LONG_W | NUMBER |
-
-where LAT_N is the northern latitude and LONG_W is the western longitude.
-
-**Solution**
-```sql
-SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION;       
-```
-
-
 ###**[Weather Observation Station 5](https://www.hackerrank.com/challenges/weather-observation-station-5)**
 
 Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically.
@@ -290,7 +239,6 @@ select city, length(city) from station order by length(city) DESC,city ASC fetch
 select city, length(city) from station order by length(city) asc ,city asc fetch first row only;      
 ```
 
-
 ###**[Weather Observation Station 6](https://www.hackerrank.com/challenges/weather-observation-station-6)**
 
 Query the list of CITY names starting with vowels (a, e, i, o, u) from STATION. Your result cannot contain duplicates.
@@ -312,4 +260,27 @@ where LAT_N is the northern latitude and LONG_W is the western longitude.
 **Solution**
 ```sql
 SELECT DISTINCT(CITY) FROM STATION WHERE CITY LIKE 'A%' OR CITY LIKE 'E%' OR CITY LIKE 'I%' OR CITY LIKE 'O%' OR CITY LIKE 'U%' ORDER BY CITY ASC;       
+```
+
+###**[Weather Observation Station 7](https://www.hackerrank.com/challenges/weather-observation-station-7)**
+
+Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. Your result cannot contain duplicates.
+
+Input Format
+
+The STATION table is described as follows:
+
+|  Field | Type |
+|---|---|
+| ID  | NUMBER |
+| CITY | VARCHAR2(21)   |
+| STATE  | VARCHAR2(2)  |
+| LAT_N |  NUMBER |
+| LONG_W | NUMBER |
+
+where LAT_N is the northern latitude and LONG_W is the western longitude.
+
+**Solution**
+```sql
+SELECT DISTINCT(CITY) FROM STATION WHERE CITY LIKE '%a' OR CITY LIKE '%e' OR CITY LIKE '%i' OR CITY LIKE '%o' OR CITY LIKE '%u';       
 ```
