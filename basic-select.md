@@ -236,7 +236,10 @@ When ordered alphabetically, the CITY names are listed as ABC, DEF, PQRS, and WX
 **Solution**
 ```sql
 select city, length(city) from station order by length(city) DESC,city ASC fetch first row only;
-select city, length(city) from station order by length(city) asc ,city asc fetch first row only;      
+select city, length(city) from station order by length(city) asc ,city asc fetch first row only;    
+                        OR
+SELECT CITY, LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) ASC, CITY LIMIT 1;
+SELECT CITY, LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) DESC, CITY LIMIT 1;  
 ```
 
 ###**[Weather Observation Station 6](https://www.hackerrank.com/challenges/weather-observation-station-6)**
