@@ -355,6 +355,11 @@ where LAT_N is the northern latitude and LONG_W is the western longitude.
 **Solution**
 ```sql
 SELECT DISTINCT CITY FROM STATION WHERE UPPER(SUBSTR(CITY, LENGTH(CITY), 1)) NOT IN ('A','E','I','O','U') AND LOWER(SUBSTR(CITY, LENGTH(CITY),1)) NOT IN ('a','e','i','o','u');    
+
+          OR
+          
+SELECT DISTINCT CITY FROM STATION WHERE (CITY NOT LIKE 'A%') AND (CITY NOT LIKE 'E%') AND (CITY NOT LIKE 'I%') AND (CITY NOT LIKE 'O%') AND (CITY NOT LIKE 'U%');          
+
 ```
 
 ###**[Weather Observation Station 11](https://www.hackerrank.com/challenges/weather-observation-station-11/problem)**
