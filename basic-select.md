@@ -258,9 +258,12 @@ The STATION table is described as follows:
 where LAT_N is the northern latitude and LONG_W is the western longitude.
 
 **Solution**
+
+**Explanation**
+
+We used REGEXP to filter the city which has a vowel letters
 ```sql
-SELECT DISTINCT(CITY) FROM STATION WHERE CITY LIKE 'A%' OR CITY LIKE 'E%' OR CITY LIKE 'I%' OR CITY LIKE 'O%' 
-OR CITY LIKE 'U%' ORDER BY CITY ASC;       
+SELECT DISTINCT CITY FROM STATION WHERE CITY REGEXP '^[aeiouAEIOU]';       
 ```
 
 ###**[Weather Observation Station 7](https://www.hackerrank.com/challenges/weather-observation-station-7)**
