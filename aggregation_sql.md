@@ -45,3 +45,11 @@ where LAT_N is the northern latitude and LONG_W is the western longitude.
 ```sql
 select truncate(max(lat_n),4) from station where lat_n< 137.2345;
 ```
+
+Alternative solution will be 
+
+**Solution**
+```sql
+select truncate(lat_n,4) from station where lat_n < 137.2345 order by lat_n desc limit 1;
+```
+
